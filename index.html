@@ -116,7 +116,7 @@ footer { margin-top: 56px; font-size: 14px; color: var(--soft); }
     <div class="intro">
       <p>Hey, I'm Jayden. I'm an AI Training Fellow at Handshake AI, where I evaluate AI models, and in my free time I build AI tools for real problems I run into.</p>
       <p>I'm a first-generation college student. I played basketball at Dakota State on an NAIA scholarship, and now I coach youth players in Santa Monica. I'm transferring to a four-year school in Fall 2027. I want to start in data analytics, then grow into machine learning and eventually quant finance.</p>
-      <p>Below are four projects I've built. Each one has a write-up of how it works, what broke along the way, and the numbers. The code for all four runs, has tests, and works offline in a demo mode.</p>
+      <p>Below are four projects. <b>I used AI to help build all of them</b>, mainly Claude, which helped me write and debug the code. Each one has a write-up of how it works, what broke along the way, and the numbers. The code for all four runs, has tests, and works offline in a demo mode.</p>
     </div>
   </header>
 
@@ -136,7 +136,7 @@ footer { margin-top: 56px; font-size: 14px; color: var(--soft); }
   <!-- ================= COACHBOT ================= -->
   <article id="coachbot">
     <h2>AI Coaching Chatbot</h2>
-    <div class="meta"><span>Summer 2026</span><span>Scottsdale Basketball</span><span>10 tests</span></div>
+    <div class="meta"><span>Summer 2026</span><span>Scottsdale Basketball</span><span>10 tests</span><span>Built with AI help</span></div>
 
     <p>When I worked as a trainer at Scottsdale Basketball, players were always messaging the head coach with questions: how to fix their jumper, what to do on rest days, how to stop getting down on themselves. He couldn't answer everyone, especially late at night. So I used AI tools to help build a chatbot that answers the way he would.</p>
     <p>The version here is a cleaned-up rebuild I can share publicly. The coach profile in it is a generic example, not the real coach.</p>
@@ -194,7 +194,7 @@ system = build_system_prompt(self.profile, Playbook.format(drills))</pre>
   <!-- ================= VISION ================= -->
   <article id="vision">
     <h2>Vision Production Inspection</h2>
-    <div class="meta"><span>2026</span><span>AI vision project</span><span>8 tests</span></div>
+    <div class="meta"><span>2026</span><span>AI vision project</span><span>8 tests</span><span>Built with AI help</span></div>
 
     <p>This one came out of my AI vision project on speeding up production. Checking parts by eye is slow, and people get tired and miss things. I wanted to see how far plain computer vision could go before needing a big AI model.</p>
     <p>The demo inspects metal washers on a tray. It counts every part and rejects three kinds of defects: a missing center hole, an undersized part, and a chipped edge.</p>
@@ -260,7 +260,7 @@ edge_ratio = dists.min() / np.median(dists)   <span class="c"># ~0.98 round, ~0.
   <!-- ================= CRM ================= -->
   <article id="crm">
     <h2>CRM to ERP Sync</h2>
-    <div class="meta"><span>2026</span><span>Systems automation</span><span>17 tests</span></div>
+    <div class="meta"><span>2026</span><span>Systems automation</span><span>17 tests</span><span>Built with AI help</span></div>
 
     <p>Sales teams close deals in a CRM. Finance needs those deals in the ERP to invoice them. At a lot of small businesses, someone copies them over by hand, which is slow and full of typos. This pipeline does it automatically.</p>
     <p>The hard part isn't moving data. It's that real exports are messy. In my sample export of 60 deals (all fake companies and people), the same company shows up as "Summit Fitness," "SUMMIT FITNESS," and " Summit Fitness  LLC." Amounts look like <code>$36,000.00</code>, <code>36000</code>, and <code>36k</code>. Dates come in four formats.</p>
@@ -315,7 +315,7 @@ amount_cents INTEGER NOT NULL <span class="k">CHECK</span> (amount_cents &gt;= 0
   <!-- ================= JARVIS ================= -->
   <article id="jarvis">
     <h2>Jarvis</h2>
-    <div class="meta"><span>2026</span><span>Personal project</span><span>12 tests</span></div>
+    <div class="meta"><span>2026</span><span>Personal project</span><span>12 tests</span><span>Built with AI help</span></div>
 
     <p>My Downloads folder is a mess: resume v3, resume v3 (1), homework PDFs, game clips, installers I ran once. I wanted an assistant I could just tell "clean this up," the way you'd ask a person.</p>
     <p>Jarvis uses Claude's tool use. The model decides which tool to call, like "find duplicates" or "organize folder," and my code runs it. The interesting part was making it safe, because an AI that can move your files can also mess them up.</p>
@@ -380,7 +380,7 @@ Jarvis: Moved 25 files into category folders.
   <section id="how">
     <h2>How I work</h2>
     <p>My job at Handshake AI is finding where AI models get things wrong, and that habit shows up in how I build. I don't trust a number until I've tried to break it. That's why each project has tests, and why I re-checked results that looked too good.</p>
-    <p>I use AI coding tools a lot, mostly Claude, to help write and debug code, and I'm upfront about that. The part I own is deciding what to build, testing whether it actually works, and catching it when it doesn't, like the inflated chatbot score or the chip detector that only looked perfect on easy photos.</p>
+    <p>I used AI, mostly Claude, to help with every project on this page, including writing and debugging the code and drafting these write-ups. I'm upfront about that. The part I own is deciding what to build, testing whether it actually works, and catching it when it doesn't, like the inflated chatbot score or the chip detector that only looked perfect on easy photos.</p>
   </section>
 
   <hr>
