@@ -116,7 +116,7 @@ footer { margin-top: 56px; font-size: 14px; color: var(--soft); }
     <div class="intro">
       <p>Hey, I'm Jayden. By day, I'm an AI Training Fellow at Handshake AI, poking holes in AI models so they get things right, and an AI Document Intelligence extern with Pfizer (through Extern), using OCR, LLMs, and RAG in Python to pull data out of documents automatically. The rest of the time goes into building AI tools for problems I actually run into.</p>
       <p>First-generation college student. Former NAIA scholarship basketball player at Dakota State, now a youth coach in Santa Monica. Next stop is a four-year school in Fall 2027, on a path that runs from data analytics to machine learning and, eventually, quant finance.</p>
-      <p>Below are four projects, <b>each built with a lot of help from AI</b>, mainly Claude, which helped write and debug the code. Every write-up covers how the project works, what broke along the way, and the numbers. All four run, have tests, and work offline in demo mode.</p>
+      <p>Below are my projects, <b>each built with a lot of help from AI</b>, mainly Claude, which helped write and debug the code. Every write-up covers how the project works and what broke along the way. The first four run, have tests, and work offline in demo mode. The last three are newer projects from fall 2026, including a prediction-market trading bot that was my first real finance project.</p>
     </div>
   </header>
 
@@ -125,6 +125,9 @@ footer { margin-top: 56px; font-size: 14px; color: var(--soft); }
     <li><a href="#vision">Vision Production Inspection</a><span class="when">Python · OpenCV</span><span class="what">Counts parts in production photos and rejects the defective ones in about 50 ms per photo.</span></li>
     <li><a href="#crm">CRM to ERP Sync</a><span class="when">Python · SQL · SQLite</span><span class="what">Cleans messy sales exports and loads every closed deal into a finance database exactly once.</span></li>
     <li><a href="#jarvis">Jarvis</a><span class="when">Python · Claude tool use</span><span class="what">A personal assistant that cleans up folders, finds duplicates, and can undo everything it does.</span></li>
+    <li><a href="#kalshi">Prediction-Market Trading Bot</a><span class="when">Kalshi API · risk rules · web dashboard</span><span class="what">Finance project: an automated bot that traded real money on Kalshi markets under strict bankroll rules.</span></li>
+    <li><a href="#clipbot">TikTok Clip Bot</a><span class="when">Automation · Buffer</span><span class="what">Finds funny moments from top Kick and Twitch streams and posts them to TikTok on its own. In progress.</span></li>
+    <li><a href="#pythonia">Pythonia Quest</a><span class="when">JavaScript · HTML · AI chatbot</span><span class="what">A sci-fi open-world RPG I built to teach myself Python, with an in-game AI coding helper.</span></li>
   </ul>
 
   <div class="now">
@@ -373,6 +376,70 @@ Jarvis: Moved 25 files into category folders.
       <li>A weekly automatic cleanup of Downloads.</li>
     </ul>
     <p class="stack">Python, Claude API tool use, hashing, pytest</p>
+  </article>
+
+  <hr>
+
+  <!-- ================= KALSHI ================= -->
+  <article id="kalshi">
+    <h2>Prediction-Market Trading Bot</h2>
+    <div class="meta"><span>Fall 2026</span><span>Personal finance project</span><span>Retired Nov 2026</span><span>Built with AI help</span></div>
+
+    <p>I wanted to learn how trading actually works by building something that trades, not by reading about it. It started as a stock bot idea from a TikTok video, then became a bot on my own Kalshi account, a regulated U.S. prediction market where you buy yes/no contracts on real outcomes. It ran on my laptop with real money, starting from about a $10 bankroll.</p>
+
+    <h3>How it works</h3>
+    <ol>
+      <li><b>Hard risk rules come first.</b> The balance can never drop below $1, the bot can never withdraw money, and it can only use what I deposit. Those rules live in code, so no strategy can override them.</li>
+      <li><b>Paper trading before real money.</b> New strategies made "paper picks" first. A locks-only mode stayed on until the bot logged 30 successful paper picks, then switched off by itself.</li>
+      <li><b>It watches open positions.</b> During live markets it monitors each bet and cashes out only when a loss is close to certain, so it doesn't bail on a bet that can still come back.</li>
+      <li><b>A dashboard anyone can read.</b> Picks and earnings show up on a simple web page in plain language instead of trading tickers, so I could check it from my phone.</li>
+    </ol>
+
+    <h3>What I learned</h3>
+    <ul>
+      <li>I moved it to Kalshi's 15-minute Bitcoin and gold up/down markets after seeing a popular TikTok timing rule. In testing, that rule lost money. Backtesting a strategy before trusting it is the most valuable thing this project taught me.</li>
+      <li>Position sizing matters as much as picking winners. Betting the whole bankroll each time grows fast on paper and wipes out fast in real life.</li>
+      <li>I retired the bot in November 2026. The next version would start with a written strategy and a backtest, not a TikTok video.</li>
+    </ul>
+    <p class="stack">Kalshi API, paper trading, bankroll and risk rules, live monitoring, web dashboard</p>
+  </article>
+
+  <hr>
+
+  <!-- ================= CLIP BOT ================= -->
+  <article id="clipbot">
+    <h2>TikTok Clip Bot</h2>
+    <div class="meta"><span>Fall 2026</span><span>Personal project</span><span>In progress</span><span>Built with AI help</span></div>
+
+    <p>Clip accounts that repost the funniest moments from big streamers get huge reach, but doing it by hand is a full-time job. This bot is meant to do the whole thing with nobody touching it: find the moment, cut the clip, write the caption, and post it.</p>
+
+    <h3>How it works</h3>
+    <ol>
+      <li><b>It watches the top streamers.</b> It pulls from the biggest Kick and Twitch channels and looks for the funny moments worth clipping.</li>
+      <li><b>Clips stay whole.</b> Each clip runs the full moment, never cut off mid-joke, so viewers aren't left on a cliffhanger.</li>
+      <li><b>It writes captions and hashtags</b> for each clip and queues it to post through Buffer's free plan, with a goal of 10 to 20 posts a day.</li>
+      <li><b>A content-safety check runs before posting,</b> so anything that breaks TikTok's rules never gets uploaded.</li>
+    </ol>
+    <p class="stack">Stream clipping, captioning, Buffer scheduling, content filtering</p>
+  </article>
+
+  <hr>
+
+  <!-- ================= PYTHONIA ================= -->
+  <article id="pythonia">
+    <h2>Pythonia Quest</h2>
+    <div class="meta"><span>Fall 2026</span><span>Learning project</span><span>Browser game</span><span>Built with AI help</span></div>
+
+    <p>I learn by doing things over and over, and coding courses felt like homework. So I built a game to teach myself Python. It's a sci-fi hacker RPG set in Neo-Py City, and the goal is for it to feel like a game first and a class second.</p>
+
+    <h3>How it works</h3>
+    <ul>
+      <li><b>It follows a real course.</b> Quests cover what a Python 1 and Python 2 class would, from variables and loops up to the concepts used in AI.</li>
+      <li><b>Repetition is the point.</b> Skills come back again and again in new missions until they stick.</li>
+      <li><b>It explains the why.</b> Each concept comes with when you'd actually use it, plus walkthroughs for when you're stuck.</li>
+      <li><b>An in-game AI helper</b> specializes in code and answers questions as you play.</li>
+    </ul>
+    <p class="stack">JavaScript, HTML, in-game AI chatbot</p>
   </article>
 
   <hr>
